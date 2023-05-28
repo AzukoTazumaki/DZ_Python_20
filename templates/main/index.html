@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row d-flex align-items-center vh-100">
+
+        <div class="offset-1 col-5">
+            {% block welcome %}
+            {% include 'main/welcome.html' %}
+            {% endblock %}
+        </div>
+
+        <div class="col-5 exercises_content p-5 rounded-5">
+            <div class="row">
+
+                {% block exercises_content %}
+                {% endblock %}
+
+                {% block exercises_answer %}
+                {% endblock %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'main/index.html' %}
+
+{% block exercises_answer %}
+
+<div class="col-12">
+    <h5 class="mb-3 text-end exercises_answer_title">Задание 1.</h5>
+    <hr>
+    <p class="exercises_answer_title text-start">Общие элементы трех кортежей:</p>
+    <p class="text-center">{{ result_ex_1 }}</p>
+    <h5 class="mb-3 text-end exercises_answer_title">Задание 2.</h5>
+    <hr>
+    <p class="exercises_answer_title text-start">Уникальные элементы трех кортежей:</p>
+    <p class="text-center">{{ result_ex_2 }}</p>
+    <h5 class="mb-3 text-end exercises_answer_title">Задание 3.</h5>
+    <hr>
+    {% if result_ex_3: %}
+    <p class="exercises_answer_title text-start">Найденные совпадения:</p>
+    <div class="d-flex justify-content-center">
+        {% for index, number in result_ex_3.items(): %}
+        <p class="text-center mx-3">индекс -> {{ index }} <br> число -> {{ number }}</p>
+        {% endfor %}
+    </div>
+    {% else: %}
+    <p class="exercises_answer_title text-start">Совпадений не найдено.</p>
+    {% endif %}
+
+    <div class="d-flex justify-content-center mt-3">
+        <a href="/">
+            <button class="button_to_main_page">На главную страницу</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
